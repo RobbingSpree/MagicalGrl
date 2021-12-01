@@ -24,7 +24,7 @@ facingdirection=point_direction(x,y,mouse_x,mouse_y) //direction the character w
 hipy=y-(thigh+calf) //set the hip position. Note that you can move this y position to crouch for example.
 hipx=x
 
-IK_step(thigh,calf) //run the IK system
+IK_step() //run the IK system
 
 ///////////
 
