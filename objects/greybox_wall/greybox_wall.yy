@@ -3,7 +3,7 @@
     "name": "greybox_spr",
     "path": "sprites/greybox_spr/greybox_spr.yy",
   },
-  "solid": false,
+  "solid": true,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,

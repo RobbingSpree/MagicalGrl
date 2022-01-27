@@ -1,14 +1,28 @@
 function movement_scr() {
 	//the code below is just a simple speed/direction based movement system for the demo.
-	if mouse_check_button(mb_left)
-	{
+	if mouse_check_button(mb_left) {
 	if !mouse_check_button(mb_right)
-	dir=point_direction(x,y,mouse_x,mouse_y)
+		dir=point_direction(x,y,mouse_x,mouse_y)
 	motion_add(dir,min(0.4,distance_to_point(mouse_x,mouse_y)/400))
 	}
 	friction=0.1
 	speed=min(2,speed)
 	/////////
+}
+
+function wasd_movement_scr() {
+	var left = keyboard_check(vk_left) || keyboard_check(ord("A"));
+	var right = keyboard_check(vk_right) || keyboard_check(ord("D"));
+	var up = keyboard_check(vk_up) || keyboard_check(ord("W"));
+	var down = keyboard_check(vk_down) || keyboard_check(ord("S"));
+	var input_h = right-left;
+	var input_v = down-up;
+	dpad_dir = point_distance(0,0,input_h,input_v) > 0 ? point_direction(0,0,input_h,input_v) : no_direction;
+	if dpad_dir != no_direction
+		motion_add(dpad_dir,0.4)
+	friction=0.1
+	speed=min(2,speed)
+	
 }
 
 function bounce_scr() {
@@ -45,6 +59,7 @@ function IK_create(_thigh, _calf) {
 	gait=0 //size of step
 	thigh = _thigh;
 	calf = _calf;
+	skin_col = make_color_rgb(255,205,178);
 }
 
 function IK_step() {
@@ -135,9 +150,11 @@ function draw_leg(Ax, Ay, _b, _a, mo_co, motion_counter) {
 	///DRAWING THE LEG///
 	//Leg can be drawn either as 2 lines, or stretch a calf and a thigh sprite//
 	//argument 5 is an offset using the horizontal component of the facing direction
-	draw_line_width(Ax+lengthdir_x(motion_counter,facingdirection+90),Ay,C2x+lengthdir_x(motion_counter,facingdirection+90),C2y,3)
-	draw_line_width(C2x+lengthdir_x(motion_counter,facingdirection+90),C2y,Bx+lengthdir_x(motion_counter,facingdirection+90),By,1.5)
-
+	//draw_line_width(Ax+lengthdir_x(motion_counter,facingdirection+90),Ay,C2x+lengthdir_x(motion_counter,facingdirection+90),C2y,3)
+	//draw_line_width(C2x+lengthdir_x(motion_counter,facingdirection+90),C2y,Bx+lengthdir_x(motion_counter,facingdirection+90),By,1.5)
+	//attempt at making colored legs
+	draw_line_width_color(Ax+lengthdir_x(motion_counter,facingdirection+90),Ay,C2x+lengthdir_x(motion_counter,facingdirection+90),C2y,3,skin_col,skin_col)
+	draw_line_width_color(C2x+lengthdir_x(motion_counter,facingdirection+90),C2y,Bx+lengthdir_x(motion_counter,facingdirection+90),By,1.5,skin_col,skin_col)
 	/* SAMPLE CODE FOR LEG SPRITES
 	var thigh_scale, calf_scale, thigh_dir, calf_dir, thigh_length, calf_length;
 	thigh_scale=point_distance(Ax,Ay,C2x,C2y)
