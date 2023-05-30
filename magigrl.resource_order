@@ -1,0 +1,19 @@
+{
+  "FolderOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"hit_box_spr","order":4,"path":"sprites/hit_box_spr/hit_box_spr.yy",},
+    {"name":"face_spr","order":9,"path":"sprites/face_spr/face_spr.yy",},
+    {"name":"sprite3","order":3,"path":"sprites/sprite3/sprite3.yy",},
+    {"name":"controller","order":1,"path":"objects/controller/controller.yy",},
+    {"name":"sprite0","order":2,"path":"sprites/sprite0/sprite0.yy",},
+    {"name":"player_body","order":4,"path":"objects/player_body/player_body.yy",},
+    {"name":"solid_","order":3,"path":"objects/solid_/solid_.yy",},
+    {"name":"shirt_spr","order":7,"path":"sprites/shirt_spr/shirt_spr.yy",},
+    {"name":"torso_spr","order":5,"path":"sprites/torso_spr/torso_spr.yy",},
+    {"name":"greybox_spr","order":1,"path":"sprites/greybox_spr/greybox_spr.yy",},
+    {"name":"greybox_wall","order":2,"path":"objects/greybox_wall/greybox_wall.yy",},
+    {"name":"player_body_wasd","order":5,"path":"objects/player_body_wasd/player_body_wasd.yy",},
+    {"name":"skirt_spr","order":8,"path":"sprites/skirt_spr/skirt_spr.yy",},
+    {"name":"hair_spr","order":10,"path":"sprites/hair_spr/hair_spr.yy",},
+  ],
+}
